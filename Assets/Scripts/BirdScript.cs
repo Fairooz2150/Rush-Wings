@@ -27,7 +27,10 @@ public class BirdScript : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        score.showGameOver();
-        birdIsAlive = false;
+        if (collision.gameObject.tag == "Pipe")
+        {
+            score.showGameOver();
+            birdIsAlive = false;
+        }
     }
 }

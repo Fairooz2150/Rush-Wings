@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7583152355441538389}
   m_Layer: 0
   m_Name: Top Pipe
-  m_TagString: Untagged
+  m_TagString: Pipe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -192,7 +192,7 @@ GameObject:
   - component: {fileID: 6492233244078746939}
   m_Layer: 0
   m_Name: Bottom Pipe
-  m_TagString: Untagged
+  m_TagString: Pipe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -321,9 +321,10 @@ GameObject:
   - component: {fileID: 579280342785367732}
   - component: {fileID: 8519501777298252447}
   - component: {fileID: 7386998656413601187}
+  - component: {fileID: 927264240375646819}
   m_Layer: 0
   m_Name: Pointer
-  m_TagString: Untagged
+  m_TagString: Pipe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -430,6 +431,20 @@ CapsuleCollider2D:
   m_Offset: {x: -0.42125025, y: 0.045665108}
   m_Size: {x: 1.6634202, y: 3.85581}
   m_Direction: 0
+--- !u!114 &927264240375646819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6626932104750917722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c404abbea6a460449810c17a41aaea06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bottomPipe: {fileID: 211722299527435673}
+  moveAmount: 12.4
 --- !u!1 &7882085575966678975
 GameObject:
   m_ObjectHideFlags: 0

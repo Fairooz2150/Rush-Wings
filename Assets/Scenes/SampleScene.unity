@@ -675,7 +675,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 321208094}
-  - {fileID: 1825404461}
   - {fileID: 1185599914}
   m_Father: {fileID: 2009608166}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 32.389}
@@ -890,7 +889,7 @@ GameObject:
   - component: {fileID: 1380683852}
   - component: {fileID: 1380683851}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: Game Over Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6062,7 +6061,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1825404461}
   - component: {fileID: 1825404462}
-  m_Layer: 0
+  - component: {fileID: 1825404463}
+  - component: {fileID: 1825404464}
+  m_Layer: 6
   m_Name: straight red jet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6077,12 +6078,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1825404460}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.8706181, w: 0.49195945}
-  m_LocalPosition: {x: 0.1, y: -2.9, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.69886535, w: 0.7152533}
+  m_LocalPosition: {x: -0.6, y: 4.51, z: 0}
+  m_LocalScale: {x: 0.28690082, y: 0.28690082, z: 0.28690082}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1030643400}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -121.061}
 --- !u!212 &1825404462
 SpriteRenderer:
@@ -6136,6 +6137,85 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!68 &1825404463
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825404460}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 1.5045917, y: -4.473452}
+  - {x: 0.03392727, y: -3.7613044}
+  - {x: -1.7295291, y: -4.2426667}
+  - {x: -1.5820434, y: -3.1482878}
+  - {x: -0.6753756, y: -1.8394781}
+  - {x: -2.0391545, y: -0.19009699}
+  - {x: -1.3353884, y: 2.5803204}
+  - {x: 0.11764458, y: 4.5566607}
+  - {x: 1.5064703, y: 1.9317049}
+  - {x: 2.2550273, y: -0.24917543}
+  - {x: 0.6970012, y: -2.1385865}
+  - {x: 1.8813417, y: -3.3065712}
+  - {x: 1.6376321, y: -4.438017}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
+--- !u!50 &1825404464
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825404460}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &1830632929
 GameObject:
   m_ObjectHideFlags: 0
@@ -6488,6 +6568,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
+  - {fileID: 1825404461}
   - {fileID: 2009608166}
   - {fileID: 959782374}
   - {fileID: 1269311668}
