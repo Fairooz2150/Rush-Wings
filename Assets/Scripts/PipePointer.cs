@@ -7,27 +7,37 @@ public class PipePointer : MonoBehaviour
 
     public Transform bottomPipe;
     [SerializeField] float moveAmount = 12.4f;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] float moveSpeed = 2f;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    bool shouldMove = false;
+    float targetY;
+
 
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer==6)
+        if (collision.gameObject.layer == 6)
         {
             Debug.Log("down the pipe");
-           Vector3 pos = bottomPipe.position;
-           pos.y -= moveAmount;
-           bottomPipe.position = pos;
+            Destroy(collision.gameObject);
+            targetY = bottomPipe.position.y - moveAmount;
+            shouldMove = true;
+        }
+    }
+    void Update()
+    {
+        if (shouldMove)
+        {
+            Vector3 pos = bottomPipe.position;
+
+            pos.y = Mathf.MoveTowards(pos.y, targetY, moveSpeed * Time.deltaTime);
+
+            bottomPipe.position = pos;
+
+            if (Mathf.Approximately(pos.y, targetY))
+            {
+                shouldMove = false; 
+            }
         }
     }
 }

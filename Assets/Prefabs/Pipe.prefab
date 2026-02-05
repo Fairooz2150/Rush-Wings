@@ -445,6 +445,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bottomPipe: {fileID: 211722299527435673}
   moveAmount: 12.4
+  moveSpeed: 8
 --- !u!1 &7882085575966678975
 GameObject:
   m_ObjectHideFlags: 0
