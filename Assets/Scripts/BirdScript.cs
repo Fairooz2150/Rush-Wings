@@ -7,11 +7,13 @@ public class BirdScript : MonoBehaviour
     public Rigidbody2D myRigidbody;
     public float flapStrength;
     public ScoreManager score;
+    public ShootingScript arrow;
     public bool birdIsAlive = true;
     // Start is called before the first frame update
     void Start()
     {
         score = GameObject.FindGameObjectWithTag("Score").GetComponent<ScoreManager>();
+        arrow = GameObject.FindGameObjectWithTag("Player").GetComponent<ShootingScript>();
 
     }
 
@@ -23,14 +25,19 @@ public class BirdScript : MonoBehaviour
         {
             myRigidbody.velocity = Vector2.up * flapStrength;
         }
-    }
 
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Pipe")
+        if(Input.GetKeyDown(KeyCode.RightArrow) && birdIsAlive)
         {
-            score.showGameOver();
-            birdIsAlive = false;
+            arrow.Shoot();
         }
     }
+
+    // void OnCollisionEnter2D(Collision2D collision)
+    // {
+    //     if (collision.gameObject.tag == "Pipe")
+    //     {
+    //         score.showGameOver();
+    //         birdIsAlive = false;
+    //     }
+    // }
 }

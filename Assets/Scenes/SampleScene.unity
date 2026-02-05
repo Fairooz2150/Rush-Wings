@@ -6245,9 +6245,10 @@ GameObject:
   - component: {fileID: 2009608164}
   - component: {fileID: 2009608168}
   - component: {fileID: 2009608167}
+  - component: {fileID: 2009608169}
   m_Layer: 3
   m_Name: Bird
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6362,6 +6363,7 @@ MonoBehaviour:
   myRigidbody: {fileID: 2009608164}
   flapStrength: 7
   score: {fileID: 0}
+  arrow: {fileID: 0}
   birdIsAlive: 1
 --- !u!58 &2009608168
 CircleCollider2D:
@@ -6398,6 +6400,21 @@ CircleCollider2D:
   m_Offset: {x: -0.11907816, y: -0.19895363}
   serializedVersion: 2
   m_Radius: 2.2652726
+--- !u!114 &2009608169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009608163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c37fec15c3754a4a9507c0ea5a609e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrowPrefab: {fileID: 4241554455223719243, guid: c80c39e74ebc4654d971ffaab0a9bae9, type: 3}
+  bird: {fileID: 2009608166}
+  shootForce: 15
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -16,7 +16,13 @@ public class PipePointer : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == 6)
+        if (shouldMove)
+        {
+            
+        return;
+        }
+
+      else if (collision.gameObject.layer == 6)
         {
             Debug.Log("down the pipe");
             Destroy(collision.gameObject);
@@ -34,10 +40,10 @@ public class PipePointer : MonoBehaviour
 
             bottomPipe.position = pos;
 
-            if (Mathf.Approximately(pos.y, targetY))
-            {
-                shouldMove = false; 
-            }
+            // if (Mathf.Approximately(pos.y, targetY))
+            // {
+            //     shouldMove = false; 
+            // }
         }
     }
 }

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 801470395450944083}
   - component: {fileID: 7933645863528017125}
   m_Layer: 6
-  m_Name: straight red jet
+  m_Name: Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,13 +28,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8176610146912427597}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.69886535, w: 0.7152533}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: -0.6, y: 4.51, z: 0}
   m_LocalScale: {x: 0.28690082, y: 0.28690082, z: 0.28690082}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -121.061}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!212 &5404711974015973500
 SpriteRenderer:
   m_ObjectHideFlags: 0
