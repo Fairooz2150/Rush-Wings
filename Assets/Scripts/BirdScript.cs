@@ -32,12 +32,12 @@ public class BirdScript : MonoBehaviour
         }
     }
 
-    // void OnCollisionEnter2D(Collision2D collision)
-    // {
-    //     if (collision.gameObject.tag == "Pipe")
-    //     {
-    //         score.showGameOver();
-    //         birdIsAlive = false;
-    //     }
-    // }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Pipe")
+        {
+            score.showGameOver();
+            birdIsAlive = false;
+        }
+    }
 }

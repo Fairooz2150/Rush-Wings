@@ -4,14 +4,29 @@ using UnityEngine;
 
 public class ShootingScript : MonoBehaviour
 {
-    [SerializeField] GameObject arrowPrefab;
-    [SerializeField] Transform bird;
-    [SerializeField] float shootForce = 15f;
+    [SerializeField]
+    GameObject arrowPrefab;
 
+    [SerializeField]
+    Transform arrowPos;
+
+    [SerializeField]
+    Transform bird;
+
+    [SerializeField]
+    float shootForce = 15f;
 
     public void Shoot()
     {
-        GameObject arrow = Instantiate(arrowPrefab, new Vector3 (0f,0f,0f), bird.rotation);
+        // Vector3 birdPos = bird.position;
+
+        // birdPos.y -= 2f;
+
+        GameObject arrow = Instantiate(
+            arrowPrefab,
+            arrowPos.position,
+            arrowPrefab.transform.rotation
+        );
 
         Rigidbody2D rb = arrow.GetComponent<Rigidbody2D>();
         rb.AddForce(bird.right * shootForce, ForceMode2D.Impulse);

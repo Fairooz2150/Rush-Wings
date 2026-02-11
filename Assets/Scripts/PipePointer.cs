@@ -4,32 +4,32 @@ using UnityEngine;
 
 public class PipePointer : MonoBehaviour
 {
-
     public Transform bottomPipe;
-    [SerializeField] float moveAmount = 12.4f;
-    [SerializeField] float moveSpeed = 2f;
+
+    [SerializeField]
+    float moveAmount = 12.4f;
+
+    [SerializeField]
+    float moveSpeed = 2f;
 
     bool shouldMove = false;
     float targetY;
-
-
 
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (shouldMove)
         {
-            
-        return;
+            return;
         }
-
-      else if (collision.gameObject.layer == 6)
+        else if (collision.gameObject.layer == 6)
         {
             Debug.Log("down the pipe");
-            Destroy(collision.gameObject);
+            // Destroy(collision.gameObject);
             targetY = bottomPipe.position.y - moveAmount;
             shouldMove = true;
         }
     }
+
     void Update()
     {
         if (shouldMove)
@@ -42,7 +42,7 @@ public class PipePointer : MonoBehaviour
 
             // if (Mathf.Approximately(pos.y, targetY))
             // {
-            //     shouldMove = false; 
+            //     shouldMove = false;
             // }
         }
     }

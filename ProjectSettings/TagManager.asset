@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Score
   - Pipe
+  - Arrow
   layers:
   - Default
   - TransparentFX

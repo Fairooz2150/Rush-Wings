@@ -6,16 +6,11 @@ using UnityEngine.SocialPlatforms.Impl;
 public class pipeMiddleScript : MonoBehaviour
 {
     public ScoreManager score;
+
     // Start is called before the first frame update
     void Start()
     {
         score = GameObject.FindGameObjectWithTag("Score").GetComponent<ScoreManager>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -25,4 +20,6 @@ public class pipeMiddleScript : MonoBehaviour
             score.addScore(1);
         }
     }
+
+    
 }

@@ -25,6 +25,6 @@ public class ScoreManager : MonoBehaviour
 
     public void showGameOver()
     {
-     gameOverScreen.SetActive(true);    
+        gameOverScreen.SetActive(true);
     }
 }
