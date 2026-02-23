@@ -15,22 +15,21 @@ public class ArrowScript : MonoBehaviour
             {
                 gameObject.layer = 0;
             }
-            GameObject arrow = gameObject;
-            StartCoroutine(DestroyObject(arrow));
-            // Destroy(gameObject);
+
         }
 
-        if (collision.gameObject.tag == "Pointer")
-        {
-            GameObject arrow = gameObject;
-            StartCoroutine(DestroyObject(arrow));
-        }
+    }
+
+    void Start()
+    {
+        GameObject arrow = gameObject;
+        StartCoroutine(DestroyObject(arrow));
     }
 
 
     IEnumerator DestroyObject(GameObject arrow)
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         Destroy(arrow);
     }
 

@@ -8,7 +8,7 @@
   - Layers:
     - Default, TransparentFX, Ignore Raycast, Bird, Water, UI, Arrow
 - Active game object:
-  - Name: Main Camera
-  - Tag: MainCamera
-  - Layer: Default
+  - Name: Game Over Panel
+  - Tag: Untagged
+  - Layer: UI
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->

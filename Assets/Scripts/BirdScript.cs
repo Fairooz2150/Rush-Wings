@@ -34,10 +34,11 @@ public class BirdScript : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Pipe")
+        if (collision.gameObject.tag == "Pipe"  || collision.gameObject.tag == "Pointer")
         {
             score.showGameOver();
             birdIsAlive = false;
+            myRigidbody.constraints = RigidbodyConstraints2D.None;
         }
     }
 }
