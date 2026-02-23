@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ShootingScript : MonoBehaviour
@@ -31,4 +32,5 @@ public class ShootingScript : MonoBehaviour
         Rigidbody2D rb = arrow.GetComponent<Rigidbody2D>();
         rb.AddForce(bird.right * shootForce, ForceMode2D.Impulse);
     }
+        
 }

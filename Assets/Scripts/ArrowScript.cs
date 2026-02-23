@@ -1,20 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ArrowScript : MonoBehaviour
 {
-    void Update() { 
-
-        
-    }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Pipe")
         {
-            Debug.Log("muttii");
-            Destroy(gameObject);
+            Debug.Log("Touched collider");
+            if (gameObject.layer != 0)
+            {
+                gameObject.layer = 0;
+            }
+            GameObject arrow = gameObject;
+            StartCoroutine(DestroyObject(arrow));
+            // Destroy(gameObject);
+        }
+
+        if (collision.gameObject.tag == "Pointer")
+        {
+            GameObject arrow = gameObject;
+            StartCoroutine(DestroyObject(arrow));
         }
     }
+
+
+    IEnumerator DestroyObject(GameObject arrow)
+    {
+        yield return new WaitForSeconds(3f);
+        Destroy(arrow);
+    }
+
+
+
 }

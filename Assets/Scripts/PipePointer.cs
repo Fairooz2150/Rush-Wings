@@ -39,7 +39,10 @@ public class PipePointer : MonoBehaviour
             pos.y = Mathf.MoveTowards(pos.y, targetY, moveSpeed * Time.deltaTime);
 
             bottomPipe.position = pos;
-
+            if (gameObject)
+            {
+                gameObject.layer = 0;
+            }
             // if (Mathf.Approximately(pos.y, targetY))
             // {
             //     shouldMove = false;
