@@ -5,7 +5,7 @@ using UnityEngine;
 public class BirdScript : MonoBehaviour
 {
     public Rigidbody2D myRigidbody;
-    public float flapStrength;
+    public float flapStrength, highofFly;
     public ScoreManager score;
     public ShootingScript arrow;
     public bool birdIsAlive = true;
@@ -26,19 +26,35 @@ public class BirdScript : MonoBehaviour
             myRigidbody.velocity = Vector2.up * flapStrength;
         }
 
-        if(Input.GetKeyDown(KeyCode.RightArrow) && birdIsAlive)
+        if (Input.GetKeyDown(KeyCode.RightArrow) && birdIsAlive)
         {
             arrow.Shoot();
+        }
+
+
+        // if ((transform.position.y >= highofFly || transform.position.y <= -highofFly) && birdIsAlive)
+        // {
+        //     gameOver();
+
+        // }
+        if (Mathf.Abs(transform.position.y)>=highofFly && birdIsAlive)
+        {
+            gameOver();
         }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Pipe"  || collision.gameObject.tag == "Pointer")
+        if (collision.gameObject.tag == "Pipe" || collision.gameObject.tag == "Pointer")
         {
-            score.showGameOver();
-            birdIsAlive = false;
-            myRigidbody.constraints = RigidbodyConstraints2D.None;
+            gameOver();
         }
+    }
+
+    void gameOver()
+    {
+        score.showGameOver();
+        birdIsAlive = false;
+        myRigidbody.constraints = RigidbodyConstraints2D.None;
     }
 }

@@ -6394,6 +6394,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myRigidbody: {fileID: 2009608164}
   flapStrength: 7
+  highofFly: 24
   score: {fileID: 0}
   arrow: {fileID: 0}
   birdIsAlive: 1
