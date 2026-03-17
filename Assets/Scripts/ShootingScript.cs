@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShootingScript : MonoBehaviour
 {
@@ -13,24 +14,31 @@ public class ShootingScript : MonoBehaviour
 
     [SerializeField] float shootForce = 15f;
 
-    [SerializeField] float cooldownTime = 2.5f; 
+    [SerializeField] float cooldownTime = 2.5f;
 
     float currentCooldown = 0f;
-
+    [SerializeField] Image reloadImage;
 
     void Update()
     {
         //reduce cooldown over time
-        if(currentCooldown > 0)
+        if (currentCooldown > 0)
         {
             currentCooldown -= Time.deltaTime;
+
+           reloadImage.fillAmount = currentCooldown / cooldownTime;
+
+        }
+        else
+        {
+            reloadImage.fillAmount = 0f;
         }
     }
     public void Shoot()
     {
-       // Block shooting if still cooling down
-       if (currentCooldown > 0)
-        return;
+        // Block shooting if still cooling down
+        if (currentCooldown > 0)
+            return;
 
         GameObject arrow = Instantiate(
             arrowPrefab,
