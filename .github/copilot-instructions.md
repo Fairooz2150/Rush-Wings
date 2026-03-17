@@ -8,7 +8,7 @@
   - Layers:
     - Default, TransparentFX, Ignore Raycast, Bird, Water, UI, Arrow
 - Active game object:
-  - Name: Text (TMP)
-  - Tag: Untagged
-  - Layer: UI
+  - Name: Bird
+  - Tag: Player
+  - Layer: Bird
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->

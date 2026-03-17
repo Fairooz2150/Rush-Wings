@@ -7,6 +7,7 @@ public class BirdScript : MonoBehaviour
     public Rigidbody2D myRigidbody;
     public float flapStrength, highofFly;
     public ScoreManager score;
+    public GameObject pauseBtn;
     public ShootingScript arrow;
     public bool birdIsAlive = true;
     // Start is called before the first frame update
@@ -55,6 +56,7 @@ public class BirdScript : MonoBehaviour
     {
         score.showGameOver();
         birdIsAlive = false;
+        pauseBtn.SetActive(false);
         myRigidbody.constraints = RigidbodyConstraints2D.None;
     }
 }
