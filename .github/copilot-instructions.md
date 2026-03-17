@@ -8,7 +8,7 @@
   - Layers:
     - Default, TransparentFX, Ignore Raycast, Bird, Water, UI, Arrow
 - Active game object:
-  - Name: Pipe Spawner
+  - Name: Feather
   - Tag: Untagged
-  - Layer: Default
+  - Layer: Bird
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->
