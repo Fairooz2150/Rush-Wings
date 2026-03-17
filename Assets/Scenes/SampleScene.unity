@@ -627,7 +627,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pipe: {fileID: 3307577498467224549, guid: 1b40ecb2f02a6a548ab3fa959f64ed72, type: 3}
-  spawnRate: 4
+  spawnRate: 8
   heightOffset: 12
 --- !u!4 &959782374
 Transform:
@@ -6449,6 +6449,7 @@ MonoBehaviour:
   arrowPos: {fileID: 1840730052}
   bird: {fileID: 2009608166}
   shootForce: 15
+  cooldownTime: 2.5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
