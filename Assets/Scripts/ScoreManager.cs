@@ -7,9 +7,20 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
+
+
     public int playerScore;
     public TMP_Text scoreText;
     public GameObject gameOverScreen;
+    public ScoreManager scoreManager;
+    bool shownGameOver = false;
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Return) && shownGameOver)
+        {
+            restartGame();
+        }
+    }
 
     [ContextMenu("Increase Score")]
     public void addScore(int point)
@@ -25,6 +36,7 @@ public class ScoreManager : MonoBehaviour
 
     public void showGameOver()
     {
+        shownGameOver = true;
         gameOverScreen.SetActive(true);
     }
 }

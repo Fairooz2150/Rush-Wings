@@ -4,11 +4,11 @@
 - Active scene:
   - Name: SampleScene
   - Tags:
-    - Untagged, Respawn, Finish, EditorOnly, MainCamera, Player, GameController, Score, Pipe, Arrow, Pointer
+    - Untagged, Respawn, Finish, EditorOnly, MainCamera, Player, GameController, Score, Pipe, Arrow, Pointer, Touch Area
   - Layers:
     - Default, TransparentFX, Ignore Raycast, Bird, Water, UI, Arrow
 - Active game object:
-  - Name: Game Over Panel
+  - Name: Touch Area
   - Tag: Untagged
   - Layer: UI
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->

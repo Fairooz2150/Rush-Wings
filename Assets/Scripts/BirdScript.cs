@@ -7,29 +7,41 @@ public class BirdScript : MonoBehaviour
     public Rigidbody2D myRigidbody;
     public float flapStrength, highofFly;
     public ScoreManager score;
-    public GameObject pauseBtn;
     public ShootingScript arrow;
+    public TouchArea touchArea;
+    public GameObject pauseBtn;
+    public Animator flyAnimation;
     public bool birdIsAlive = true;
     // Start is called before the first frame update
     void Start()
     {
         score = GameObject.FindGameObjectWithTag("Score").GetComponent<ScoreManager>();
         arrow = GameObject.FindGameObjectWithTag("Player").GetComponent<ShootingScript>();
+        touchArea = GameObject.FindGameObjectWithTag("Touch Area").GetComponent<TouchArea>();
+
+        Time.timeScale = 0f;
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && birdIsAlive)
+
+        bool isFlyingActive = Input.GetKey(KeyCode.Space) || touchArea.isTouching;
+
+        if (isFlyingActive)
 
         {
-            myRigidbody.velocity = Vector2.up * flapStrength;
+            Fly();
+        }
+        else
+        {
+            StopFlying();
         }
 
-        if (Input.GetKeyDown(KeyCode.RightArrow) && birdIsAlive)
+        if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            arrow.Shoot();
+            ShootArrow();
         }
 
 
@@ -38,7 +50,7 @@ public class BirdScript : MonoBehaviour
         //     gameOver();
 
         // }
-        if (Mathf.Abs(transform.position.y)>=highofFly && birdIsAlive)
+        if (Mathf.Abs(transform.position.y) >= highofFly && birdIsAlive)
         {
             gameOver();
         }
@@ -58,5 +70,36 @@ public class BirdScript : MonoBehaviour
         birdIsAlive = false;
         pauseBtn.SetActive(false);
         myRigidbody.constraints = RigidbodyConstraints2D.None;
+    }
+
+    public void ShootArrow()
+    {
+        if (birdIsAlive)
+        {
+
+            arrow.Shoot();
+        }
+
+    }
+    public void Fly()
+    {
+        Time.timeScale = 1f;
+
+        if (birdIsAlive)
+        {
+
+            myRigidbody.velocity = Vector2.up * flapStrength;
+
+            flyAnimation.SetTrigger("Fly");
+        }
+        else
+        {
+            flyAnimation.SetTrigger("Idle");
+
+        }
+    }
+    public void StopFlying()
+    {
+        flyAnimation.SetTrigger("Idle");
     }
 }

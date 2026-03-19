@@ -14,30 +14,34 @@ public class ShootingScript : MonoBehaviour
 
     [SerializeField] float shootForce = 15f;
 
-    [SerializeField] float cooldownTime = 2.5f;
+    [SerializeField] float reloadTime = 2.5f;
 
     float currentCooldown = 0f;
     [SerializeField] Image reloadImage;
 
+    void Start()
+    {
+        currentCooldown = reloadTime;
+    }
     void Update()
     {
         //reduce cooldown over time
-        if (currentCooldown > 0)
+        if (currentCooldown < reloadTime)
         {
-            currentCooldown -= Time.deltaTime;
+            currentCooldown += Time.deltaTime;
 
-           reloadImage.fillAmount = currentCooldown / cooldownTime;
+            reloadImage.fillAmount = currentCooldown / reloadTime;
 
         }
         else
         {
-            reloadImage.fillAmount = 0f;
+            reloadImage.fillAmount = reloadTime;
         }
     }
     public void Shoot()
     {
         // Block shooting if still cooling down
-        if (currentCooldown > 0)
+        if (currentCooldown < reloadTime)
             return;
 
         GameObject arrow = Instantiate(
@@ -50,7 +54,7 @@ public class ShootingScript : MonoBehaviour
         rb.AddForce(bird.right * shootForce, ForceMode2D.Impulse);
 
         //Reset cooldown
-        currentCooldown = cooldownTime;
+        currentCooldown = 0;
     }
 
 }

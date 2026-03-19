@@ -5,17 +5,28 @@ using UnityEngine;
 public class UIManager : MonoBehaviour
 {
     public GameObject pauseBtn, pauseMenu;
+    public TouchArea touchArea;
+
     bool menuShowing = false;
+
     // Start is called before the first frame update
     void Start()
     {
+        touchArea = GameObject.FindGameObjectWithTag("Touch Area").GetComponent<TouchArea>();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (Time.timeScale == 0f)
+        {
+            if ((Input.GetKeyDown(KeyCode.Space) || touchArea.isTouching) && menuShowing)
+            {
+                ShowPauseMenu();
+            }
+        }
+       
     }
 
     public void ShowPauseMenu()
@@ -33,7 +44,7 @@ public class UIManager : MonoBehaviour
             Time.timeScale = 1f;
             pauseMenu.SetActive(false);
             pauseBtn.SetActive(true);
-            
+
         }
     }
 
