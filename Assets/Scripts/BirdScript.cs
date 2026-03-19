@@ -10,7 +10,7 @@ public class BirdScript : MonoBehaviour
     public ScoreManager score;
     public ShootingScript arrow;
     public TouchArea touchArea;
-    public GameObject pauseBtn, flyInstrAnimObj;
+    public GameObject pauseBtn, flyInstrAnimObj, shootInstrAnimObj;
     public Animator flyAnimation;
     public bool birdIsAlive = true;
     // Start is called before the first frame update
@@ -75,7 +75,10 @@ public class BirdScript : MonoBehaviour
 
     public void ShootArrow()
     {
-
+        if (shootInstrAnimObj)
+        {
+            Destroy(shootInstrAnimObj);
+        }
         if (birdIsAlive)
         {
 
