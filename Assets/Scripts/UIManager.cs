@@ -6,7 +6,7 @@ public class UIManager : MonoBehaviour
 {
     public GameObject pauseBtn, pauseMenu;
     public TouchArea touchArea;
-
+    public Animator instructionAnimation;
     bool menuShowing = false;
 
     // Start is called before the first frame update
@@ -14,6 +14,7 @@ public class UIManager : MonoBehaviour
     {
         touchArea = GameObject.FindGameObjectWithTag("Touch Area").GetComponent<TouchArea>();
 
+        instructionAnimation.updateMode = AnimatorUpdateMode.UnscaledTime;
     }
 
     // Update is called once per frame

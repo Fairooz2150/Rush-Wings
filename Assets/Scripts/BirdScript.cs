@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BirdScript : MonoBehaviour
@@ -9,7 +10,7 @@ public class BirdScript : MonoBehaviour
     public ScoreManager score;
     public ShootingScript arrow;
     public TouchArea touchArea;
-    public GameObject pauseBtn;
+    public GameObject pauseBtn, flyInstrAnimObj;
     public Animator flyAnimation;
     public bool birdIsAlive = true;
     // Start is called before the first frame update
@@ -74,6 +75,7 @@ public class BirdScript : MonoBehaviour
 
     public void ShootArrow()
     {
+
         if (birdIsAlive)
         {
 
@@ -84,6 +86,11 @@ public class BirdScript : MonoBehaviour
     public void Fly()
     {
         Time.timeScale = 1f;
+        if (flyInstrAnimObj)
+        {
+
+            Destroy(flyInstrAnimObj);
+        }
 
         if (birdIsAlive)
         {
