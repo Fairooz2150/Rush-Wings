@@ -8,6 +8,7 @@ TagManager:
   - Pipe
   - Arrow
   - Pointer
+  - Touch Area
   layers:
   - Default
   - TransparentFX
