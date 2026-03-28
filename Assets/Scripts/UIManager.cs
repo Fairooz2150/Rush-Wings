@@ -6,6 +6,7 @@ public class UIManager : MonoBehaviour
 {
     public GameObject pauseBtn, pauseMenu;
     public TouchArea touchArea;
+    [SerializeField] private BirdScript birdScript;
     public Animator instructionAnimation, shootInstrAnim;
     bool menuShowing = false;
 
@@ -13,6 +14,7 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         touchArea = GameObject.FindGameObjectWithTag("Touch Area").GetComponent<TouchArea>();
+        birdScript = GameObject.FindGameObjectWithTag("Player").GetComponent<BirdScript>();
 
         instructionAnimation.updateMode = AnimatorUpdateMode.UnscaledTime;
         // shootInstrAnim.updateMode = AnimatorUpdateMode.UnscaledTime;
@@ -23,6 +25,13 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        bool birdIsAlive = birdScript.birdIsAlive;
+
+        if(Input.GetKeyDown(KeyCode.Escape) && birdIsAlive)
+        {
+            ShowPauseMenu();
+        }
+        
         if (Time.timeScale == 0f)
         {
             if ((Input.GetKeyDown(KeyCode.Space) || touchArea.isTouching) && menuShowing)
