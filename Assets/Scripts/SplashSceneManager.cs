@@ -11,7 +11,7 @@ public class SplashSceneManager : MonoBehaviour
     [SerializeField] Image companyLogo;
     [SerializeField] Image gamePoster;
 
-    [SerializeField] float fadeDuration = 1f;
+    [SerializeField] float fadeDuration = 1.5f;
     [SerializeField] float displayTime = 2f;
     void Start()
     {
@@ -23,11 +23,11 @@ public class SplashSceneManager : MonoBehaviour
     IEnumerator PlaySplashSequence()
     {
         //both image start invisible
-        //companyLogo.color = new Color(1, 1, 1, 0);
+        companyLogo.color = new Color(1, 1, 1, 0);
         gamePoster.color = new Color(1, 1, 1, 0);
 
         //Company Logo
-        //yield return FadeIn(companyLogo);
+        yield return FadeIn(companyLogo);
         yield return new WaitForSeconds(displayTime);
         yield return FadeOut(companyLogo);
 
