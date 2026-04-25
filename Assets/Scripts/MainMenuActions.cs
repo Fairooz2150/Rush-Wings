@@ -21,4 +21,9 @@ public class MainMenuActions : MonoBehaviour
         Debug.Log("Game is exiting");
         Application.Quit();
     }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("Main Menu");
+    }
 }
