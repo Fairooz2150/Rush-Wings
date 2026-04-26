@@ -1617,14 +1617,14 @@ RectTransform:
   m_GameObject: {fileID: 508553829}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.91999, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1800473665}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -830, y: 1040}
+  m_AnchoredPosition: {x: -830, y: 1067}
   m_SizeDelta: {x: 94.3276, y: 72.5982}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &508553831
@@ -1648,9 +1648,9 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 0.9622642, g: 0.441189, b: 0.441189, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -1698,7 +1698,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: -10, z: 0, w: -10}
+  m_RaycastPadding: {x: -30, y: -20, z: -30, w: -20}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1765,6 +1765,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aafbd6e33f403d4dbbac8f83e1ee9ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonSound: {fileID: 8300000, guid: 425a4ca857fc39941aaa47464415d9d7, type: 3}
 --- !u!1 &605076024
 GameObject:
   m_ObjectHideFlags: 0
@@ -2686,6 +2687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0474a2bcf16170e41b400c6a4077a578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonSound: {fileID: 8300000, guid: 425a4ca857fc39941aaa47464415d9d7, type: 3}
 --- !u!1 &1064564776
 GameObject:
   m_ObjectHideFlags: 0
@@ -2806,8 +2808,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1823504467}
   m_HandleRect: {fileID: 1823504466}
   m_Direction: 2
-  m_Value: 0.84730923
-  m_Size: 0.46758595
+  m_Value: 0.8881146
+  m_Size: 0.4675859
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -4015,7 +4017,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -1263, y: 217.87549}
+  m_AnchoredPosition: {x: -1263, y: 159.65015}
   m_SizeDelta: {x: 2526, y: 2680.07}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1823504465

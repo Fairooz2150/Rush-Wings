@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class BackToMenu : MonoBehaviour
 {
-  
+  [SerializeField] AudioClip buttonSound;
     // Update is called once per frame
     void Update()
     {
@@ -17,6 +17,7 @@ public class BackToMenu : MonoBehaviour
 
      public void MainMenu()
     {
+        UISoundManager.Play(buttonSound);
         SceneManager.LoadScene("Main Menu");
     }
 }
