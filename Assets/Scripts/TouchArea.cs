@@ -10,6 +10,8 @@ IPointerDownHandler, IPointerUpHandler //unity will call the function when user 
     public bool isTouching = false;
     public void OnPointerDown(PointerEventData eventData)
     {
+        if(Input.GetMouseButtonDown(1))
+        return;
         isTouching = true;
     } 
     public void OnPointerUp(PointerEventData eventData)

@@ -445,6 +445,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bottomPipe: {fileID: 211722299527435673}
   moveAmount: 12.4
+  arrowHitSound: {fileID: 8300000, guid: 2d2bb68d8a1f2b44fab4e5942b3ee7a2, type: 3}
   moveSpeed: 8
 --- !u!1 &7882085575966678975
 GameObject:

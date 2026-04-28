@@ -8,6 +8,7 @@ public class PipePointer : MonoBehaviour
 
     [SerializeField]
     float moveAmount = 12.4f;
+        [SerializeField] AudioClip arrowHitSound;
 
     [SerializeField]
     float moveSpeed = 2f;
@@ -23,6 +24,12 @@ public class PipePointer : MonoBehaviour
         }
         else if (collision.gameObject.layer == 6)
         {
+            if (collision.gameObject.layer != 0)
+            {
+                UISoundManager.Play(arrowHitSound);
+                collision.gameObject.layer = 0;
+            }
+
             Debug.Log("down the pipe");
             // Destroy(collision.gameObject);
             targetY = bottomPipe.position.y - moveAmount;

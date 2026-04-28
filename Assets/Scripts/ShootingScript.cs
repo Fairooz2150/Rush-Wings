@@ -15,7 +15,7 @@ public class ShootingScript : MonoBehaviour
     [SerializeField] float shootForce = 15f;
 
     [SerializeField] float reloadTime = 2.5f;
-
+    [SerializeField] AudioClip notloadedsound,shootSound;
     float currentCooldown = 0f;
     [SerializeField] Image reloadImage;
 
@@ -42,7 +42,14 @@ public class ShootingScript : MonoBehaviour
     {
         // Block shooting if still cooling down
         if (currentCooldown < reloadTime)
+        {
+        UISoundManager.Play(notloadedsound);
+            
             return;
+        }
+
+
+        UISoundManager.Play(shootSound);
 
         GameObject arrow = Instantiate(
             arrowPrefab,

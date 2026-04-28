@@ -1765,7 +1765,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aafbd6e33f403d4dbbac8f83e1ee9ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonSound: {fileID: 8300000, guid: 425a4ca857fc39941aaa47464415d9d7, type: 3}
+  buttonSound: {fileID: 8300000, guid: d90beded536a7d34c8e69c3f039b5fe1, type: 3}
 --- !u!1 &605076024
 GameObject:
   m_ObjectHideFlags: 0
@@ -2669,7 +2669,7 @@ Transform:
   m_GameObject: {fileID: 998259462}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 769.4423, y: 754.7162, z: -4.497537}
+  m_LocalPosition: {x: 769.4423, y: 700, z: -4.497537}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2687,7 +2687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0474a2bcf16170e41b400c6a4077a578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonSound: {fileID: 8300000, guid: 425a4ca857fc39941aaa47464415d9d7, type: 3}
+  buttonSound: {fileID: 8300000, guid: d90beded536a7d34c8e69c3f039b5fe1, type: 3}
 --- !u!1 &1064564776
 GameObject:
   m_ObjectHideFlags: 0
@@ -2808,7 +2808,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1823504467}
   m_HandleRect: {fileID: 1823504466}
   m_Direction: 2
-  m_Value: 0.8881146
+  m_Value: 0.93132
   m_Size: 0.4675859
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -4017,7 +4017,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -1263, y: 159.65015}
+  m_AnchoredPosition: {x: -1263, y: 98}
   m_SizeDelta: {x: 2526, y: 2680.07}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1823504465

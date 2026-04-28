@@ -13,6 +13,7 @@ public class BirdScript : MonoBehaviour
     public GameObject pauseBtn, flyInstrAnimObj, shootInstrAnimObj;
     public Animator flyAnimation;
     public bool birdIsAlive = true;
+    [SerializeField] AudioClip beatWithPipeSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,8 +29,8 @@ public class BirdScript : MonoBehaviour
     void Update()
     {
 
-        bool isFlyingActive = Input.GetKey(KeyCode.Space) || touchArea.isTouching;
-
+        bool isFlyingActive = Input.GetKey(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)|| Input.GetKeyDown(KeyCode.W) || touchArea.isTouching;
+        bool isShoot = Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D) || Input.GetMouseButtonDown(1);
         if (isFlyingActive)
 
         {
@@ -40,7 +41,7 @@ public class BirdScript : MonoBehaviour
             StopFlying();
         }
 
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (isShoot)
         {
             ShootArrow();
         }
@@ -61,7 +62,12 @@ public class BirdScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Pipe" || collision.gameObject.tag == "Pointer")
         {
-            gameOver();
+            if (birdIsAlive)
+            {
+                UISoundManager.Play(beatWithPipeSound);
+                gameOver();
+            }
+
         }
     }
 
@@ -81,7 +87,6 @@ public class BirdScript : MonoBehaviour
         }
         if (birdIsAlive)
         {
-
             arrow.Shoot();
         }
 

@@ -13,10 +13,11 @@ public class ScoreManager : MonoBehaviour
     public TMP_Text scoreText;
     public GameObject gameOverScreen;
     public ScoreManager scoreManager;
+    public AudioClip gameOverBgm;
     bool shownGameOver = false;
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Return) && shownGameOver)
+        if (Input.GetKeyDown(KeyCode.Return) && shownGameOver)
         {
             restartGame();
         }
@@ -36,7 +37,11 @@ public class ScoreManager : MonoBehaviour
 
     public void showGameOver()
     {
-        shownGameOver = true;
-        gameOverScreen.SetActive(true);
+        if (!shownGameOver)
+        {
+            UISoundManager.Play(gameOverBgm);
+            shownGameOver = true;
+            gameOverScreen.SetActive(true);
+        }
     }
 }

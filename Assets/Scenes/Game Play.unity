@@ -170,6 +170,8 @@ MonoBehaviour:
   pauseMenu: {fileID: 7027430262303613238}
   touchArea: {fileID: 0}
   birdScript: {fileID: 0}
+  pauseSound: {fileID: 8300000, guid: 4f5c14ee962c9cd4c89a1ae84fc5fb70, type: 3}
+  homeButtonSound: {fileID: 8300000, guid: d90beded536a7d34c8e69c3f039b5fe1, type: 3}
   instructionAnimation: {fileID: 1846411693}
   shootInstrAnim: {fileID: 742864366}
 --- !u!1 &282169534
@@ -6919,6 +6921,7 @@ MonoBehaviour:
   scoreText: {fileID: 1771850955}
   gameOverScreen: {fileID: 1380683850}
   scoreManager: {fileID: 0}
+  gameOverBgm: {fileID: 8300000, guid: 2ca4120cdba66174c8e6543a5a793da0, type: 3}
 --- !u!4 &1830632931
 Transform:
   m_ObjectHideFlags: 0
@@ -7649,6 +7652,7 @@ MonoBehaviour:
   shootInstrAnimObj: {fileID: 742864364}
   flyAnimation: {fileID: 1561754905}
   birdIsAlive: 1
+  beatWithPipeSound: {fileID: 8300000, guid: 3e85a070965d1714cb356f63b299298c, type: 3}
 --- !u!58 &2009608168
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -7701,6 +7705,8 @@ MonoBehaviour:
   bird: {fileID: 2009608166}
   shootForce: 15
   reloadTime: 2.5
+  notloadedsound: {fileID: 8300000, guid: 8abd9d17a069ee64a8b9477c6ad1edbe, type: 3}
+  shootSound: {fileID: 8300000, guid: 0126327b3870c9549b905018dc11f4ec, type: 3}
   reloadImage: {fileID: 2033754673}
 --- !u!1 &2033754671
 GameObject:

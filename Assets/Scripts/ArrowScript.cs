@@ -5,14 +5,17 @@ using UnityEngine;
 
 public class ArrowScript : MonoBehaviour
 {
+    [SerializeField] AudioClip arrowHitSound;
 
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Pipe")
         {
+
             Debug.Log("Touched collider");
             if (gameObject.layer != 0)
             {
+                UISoundManager.Play(arrowHitSound);
                 gameObject.layer = 0;
             }
 

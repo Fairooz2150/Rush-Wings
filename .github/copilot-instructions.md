@@ -2,13 +2,13 @@
 - Project name: Rush wings
 - Unity version: Unity 2022.3.56f1
 - Active scene:
-  - Name: Main Menu
+  - Name: About Scene
   - Tags:
     - Untagged, Respawn, Finish, EditorOnly, MainCamera, Player, GameController, Score, Pipe, Arrow, Pointer, Touch Area
   - Layers:
     - Default, TransparentFX, Ignore Raycast, Bird, Water, UI, Arrow
 - Active game object:
-  - Name: UI_Sound_Manager
+  - Name: Content
   - Tag: Untagged
-  - Layer: Default
+  - Layer: UI
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->

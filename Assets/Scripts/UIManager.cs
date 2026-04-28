@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
     public GameObject pauseBtn, pauseMenu;
     public TouchArea touchArea;
     [SerializeField] private BirdScript birdScript;
+    [SerializeField] AudioClip pauseSound, homeButtonSound;
     public Animator instructionAnimation, shootInstrAnim;
     bool menuShowing = false;
 
@@ -35,7 +36,7 @@ public class UIManager : MonoBehaviour
         
         if (Time.timeScale == 0f)
         {
-            if ((Input.GetKeyDown(KeyCode.Space) || touchArea.isTouching) && menuShowing)
+            if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return) || touchArea.isTouching) && menuShowing)
             {
                 ShowPauseMenu();
             }
@@ -53,6 +54,7 @@ public class UIManager : MonoBehaviour
 //     }
     public void ShowPauseMenu()
     {
+        UISoundManager.Play(pauseSound);
         menuShowing = !menuShowing;
         if (menuShowing)
         {
@@ -72,6 +74,7 @@ public class UIManager : MonoBehaviour
 
     public void Home()
     {
+        UISoundManager.Play(homeButtonSound);
         SceneManager.LoadScene("Main Menu");
     }
 
