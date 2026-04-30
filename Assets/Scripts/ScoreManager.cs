@@ -10,11 +10,25 @@ public class ScoreManager : MonoBehaviour
 
 
     public int playerScore;
-    public TMP_Text scoreText;
+
+    [Header("Live Score UI")]
+     public TMP_Text scoreText;
+
+    [Header("Game Over UI")]
+    public TMP_Text currentScoreText;
+    public TMP_Text bestScoreText;
     public GameObject gameOverScreen;
     public ScoreManager scoreManager;
     public AudioClip gameOverBgm;
-    bool shownGameOver = false;
+    public bool shownGameOver = false;
+
+    int highScore;
+
+    void Start()
+    {
+        //Load saved high score
+        highScore = PlayerPrefs.GetInt("HighScore", 0);
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Return) && shownGameOver)
@@ -42,6 +56,18 @@ public class ScoreManager : MonoBehaviour
             UISoundManager.Play(gameOverBgm);
             shownGameOver = true;
             gameOverScreen.SetActive(true);
+
+            currentScoreText.text =  playerScore.ToString();
+
+            if (playerScore > highScore)
+            {
+                highScore=playerScore;
+
+                PlayerPrefs.SetInt("HighScore", highScore);
+                PlayerPrefs.Save();
+            }
+
+            bestScoreText.text = highScore.ToString();
         }
     }
 }

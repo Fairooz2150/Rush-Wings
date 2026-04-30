@@ -10,7 +10,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private BirdScript birdScript;
     [SerializeField] AudioClip pauseSound, homeButtonSound;
     public Animator instructionAnimation, shootInstrAnim;
-    bool menuShowing = false;
+    public UIManager uIManager;
+    public bool menuShowing = false;
 
     // Start is called before the first frame update
     void Start()

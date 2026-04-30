@@ -40,19 +40,28 @@ public class BGMManager : MonoBehaviour
         OnSceneLoaded(SceneManager.GetActiveScene(), LoadSceneMode.Single);
     }
 
-
+    
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         bool allowed = allowedScenes.Contains(scene.name);
-        if (allowed && !BGM.isPlaying)
+        BGM.DOKill();
+        if (allowed)
         {
-            BGM.volume=0.5f;
-            BGM.Play();
+            if (!BGM.isPlaying)
+            {
+                BGM.volume = 0f;
+                BGM.Play();
+            BGM.DOFade(0.7f, 6f).SetUpdate(true);
+            }
         }
-        else if (!allowed && BGM.isPlaying)
+        else
         {
+            if (BGM.isPlaying)
+            {
+
+                BGM.DOFade(0f, 1.35f).SetUpdate(true).OnComplete(() => BGM.Stop());
+            }
             // BGM.Stop();
-            BGM.DOFade(0f,1.35f).OnComplete(()=>BGM.Stop());
 
         }
     }

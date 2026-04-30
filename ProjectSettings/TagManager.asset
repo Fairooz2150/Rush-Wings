@@ -9,6 +9,7 @@ TagManager:
   - Arrow
   - Pointer
   - Touch Area
+  - UI Manager
   layers:
   - Default
   - TransparentFX
