@@ -5,7 +5,7 @@
 ### *A fast-paced endless flying adventure powered by reflexes, timing, and precision*
 
 
-![Rush Wings Poster](https://github.com/Fairooz2150/Rush-Wings/Assets/Sprites/Rush%20wings%20Poster.png)
+![Rush Wings Poster](https://github.com/Fairooz2150/Rush-Wings/blob/main/Assets/Sprites/Rush%20wings%20Poster.png)
 
 Rush Wings is an addictive 2D arcade flying game where quick reactions and smart aiming are the key to survival. Fly endlessly through dangerous obstacle paths while facing a unique challenge — the pipes ahead begin fully attached, blocking your path completely.
 
